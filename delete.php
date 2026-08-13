@@ -6,7 +6,7 @@ require_once 'db.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    //  データベースから該当するidのタスクを削除する命令（DELETE）
+    //  データベースから該当するidのタスクを削除する命令
     $sql = "DELETE FROM todos WHERE id = :id";
     $stmt = $pdo->prepare($sql);
    
@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();
 }
 
-// 処理が終わったら、トップページ（index.php）に戻る
+// 処理が終わったら、トップページに戻る
 header('Location: index.php');
 exit;
 ?>
