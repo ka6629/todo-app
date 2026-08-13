@@ -26,7 +26,16 @@ $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <ul>
         <?php foreach ($todos as $todo): ?>
             <li>
-                <span><?php echo htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8'); ?></span>   
+                <form action="toggle.php" method="POST" style="margin: 0; display: flex; align-items: center; gap: 10px;">
+                    <input type="hidden" name="id" value="<?php echo $todo['id']; ?>">
+                    <input type="hidden" name="status" value="<?php echo $todo['status']; ?>">
+                    
+                    <input type="checkbox" onchange="this.form.submit()" <?php if ($todo['status'] == 1) echo 'checked'; ?>>
+                    
+                    <span class="<?php if ($todo['status'] == 1) echo 'completed'; ?>">
+                        <?php echo htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8'); ?>
+                    </span>
+                </form>
                 <div>
                     <a href="edit.php?id=<?php echo $todo['id']; ?>"> [編集] </a>
                     <a href="delete.php?id=<?php echo $todo['id']; ?>" onclick="return confirm('本当に削除しますか？');"> [削除] </a>
