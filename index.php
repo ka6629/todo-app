@@ -25,6 +25,7 @@ $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <li>
                 <?php echo htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8'); ?>
                 <a href="edit.php?id=<?php echo $todo['id']; ?>"> [編集] </a>
+                <a href="delete.php?id=<?php echo $todo['id']; ?>" onclick="return confirm('本当に削除しますか？');"> [削除] </a>
             </li>
         <?php endforeach; ?>
     </ul>

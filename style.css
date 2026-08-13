@@ -1,0 +1,80 @@
+/* 画面全体の基本設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* きれいなフォントにする */
+    background-color: #f4f7f6; /* 背景を少し優しいグレーにする */
+    color: #333;
+    max-width: 600px; /* 画面の横幅を固定して */
+    margin: 40px auto; /* 真ん中に寄せる */
+    padding: 20px;
+}
+
+/* 見出しのデザイン */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* タスク入力欄とボタン */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* 入力欄 */
+input[type="text"] {
+    flex-grow: 1; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    font-size: 16px;
+}
+
+/* ボタン */
+button {
+    padding: 12px 20px;
+    background-color: #3498db; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ボタンにマウスを乗せた時、色を濃くする */
+button:hover {
+    background-color: #2980b9;
+}
+
+/* リスト）の黒丸を消す */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+li {
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* 編集・削除リンク */
+a {
+    text-decoration: none; 
+    color: #e74c3c;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* リンクにマウスを乗せた時だけ下線を出す */
+a:hover {
+    text-decoration: underline;
+}
