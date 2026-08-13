@@ -12,6 +12,7 @@ $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>My ToDo List</h1>
@@ -23,9 +24,11 @@ $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <ul>
         <?php foreach ($todos as $todo): ?>
             <li>
-                <?php echo htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8'); ?>
-                <a href="edit.php?id=<?php echo $todo['id']; ?>"> [編集] </a>
-                <a href="delete.php?id=<?php echo $todo['id']; ?>" onclick="return confirm('本当に削除しますか？');"> [削除] </a>
+                <span><?php echo htmlspecialchars($todo['task'], ENT_QUOTES, 'UTF-8'); ?></span>   
+                <div>
+                    <a href="edit.php?id=<?php echo $todo['id']; ?>"> [編集] </a>
+                    <a href="delete.php?id=<?php echo $todo['id']; ?>" onclick="return confirm('本当に削除しますか？');"> [削除] </a>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

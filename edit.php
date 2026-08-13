@@ -20,6 +20,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <title>タスクの編集</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>タスクの編集</h1>
